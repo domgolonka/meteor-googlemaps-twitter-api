@@ -1,0 +1,72 @@
+<head>
+    <title>map-demo</title>
+</head>
+
+<body>
+
+{{>maps}}
+{{>tweetList}}
+</body>
+
+
+<template name="maps">
+    <div class="map-container">{{> googleMap name="googleMap" options=googleMapOptions}}</div>
+    <h1 class="ui center aligned secondary black header"> Tweets </h1>
+</template>
+
+
+
+<template name="tweetList">
+
+    <div class="ui grid two column stackable ">
+        <div class="column four wide">
+            <div class="ui segment stacked">
+                <h2 class="ui header secondary black center aligned">Meteor.js Twitter/Google Maps</h2>
+                <div class="content">
+                    {{> changeTagForm}}
+
+                </div>
+            </div>
+        </div>
+        <div class="column twelve wide">
+            <div id="tweetList" class="ui animated selection huge list cards">
+
+
+                {{#each tweets}}
+                    <!-- {{>AnimateTemplate template="tweet" context=this}} -->
+                    {{#AnimateWithVelocity}}
+                        <div class="ui item" data-animate data-duration="500" data-properties="translateY, opacity" data-from-values="-25px, 0" data-to-values="0px, 1" data-easing-in="easeIn" data-easing-out="easeOut">
+                            <img class="ui avatar image" src="{{img}}">
+                            <a href="http://twitter.com/{{user}}" target="_blank">
+                                <div class="ui red horizontal label">{{user}}</div>
+                                <span class="sub header ui black secondary">{{text}}</span>
+                            </a>
+                        </div>
+                    {{/AnimateWithVelocity}}
+                {{/each}}
+
+            </div>
+        </div>
+    </div>
+
+</template>
+
+
+
+<template name="tweet">
+    <div class="ui item hidden transition">
+        <img class="ui avatar image" src="{{img}}">
+        <a href="http://twitter.com/{{user}}" target="_blank">
+            <div class="ui red horizontal label">{{user}}</div>
+            <span class="sub header ui black secondary">{{text}}</span>
+        </a>
+    </div>
+</template>
+
+<template name="changeTagForm">
+    <p>The current tag is: {{tagName}} </p>
+    <form>
+        <input type="text" name="changeTag" placeholder="{{tagName}}">
+        <input type="submit" value="ChangeTag">
+    </form>
+</template>

@@ -1,0 +1,22 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+
+meteorhacks:npm
+
+
+npm-container
+util
+mrt:twit
+standard-app-packages
+dburles:google-maps
+momentjs:moment
+mrt:template-animation-helper
+mrt:view-manager
+nooitaf:semantic-ui
+frozeman:animation-helper-velocity
+arunoda:streams
+autopublish
+insecure

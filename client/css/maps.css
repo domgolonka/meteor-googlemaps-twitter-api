@@ -1,0 +1,18 @@
+
+#twitter-list {
+    position: absolute;
+    bottom: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+.map-container {
+    width: 100%;
+    height: 100%;
+}
