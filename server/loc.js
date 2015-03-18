@@ -9,13 +9,14 @@ Meteor.startup(function(){
             object.remove({});
         }
     }
+
+
+});
+if (Tag.find() == null) {
     Tag.insert({
         name: ''
     });
-
-});
-
-
+}
 
 
 locStream = new Meteor.Stream("loc");
