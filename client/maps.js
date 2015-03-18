@@ -19,6 +19,9 @@ if (Meteor.isClient) {
     Template.changeTagForm.helpers ({
         tagName: function() {
             return  Session.get("tagName");
+        },
+        listTags: function() {
+            return Tag.find().fetch();
         }
     });
 

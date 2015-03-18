@@ -21,7 +21,8 @@
     <div class="ui grid two column stackable ">
         <div class="column four wide">
             <div class="ui segment stacked">
-                <h2 class="ui header secondary black center aligned">Meteor.js Twitter/Google Maps</h2>
+                <h1 class="ui header secondary black center aligned">Meteor.js Twitter/Google Maps</h1>
+                <h3 class="ui header secondary black center aligned">Get it here: https://github.com/domgolonka/meteor-googlemaps-twitter-api</h3>
                 <div class="content">
                     {{> changeTagForm}}
 
@@ -64,9 +65,26 @@
 </template>
 
 <template name="changeTagForm">
-    <p>The current tag is: {{tagName}} </p>
+    <h3>The last added Keyword is {{tagName}} </h3>
     <form>
-        <input type="text" name="changeTag" placeholder="{{tagName}}">
-        <input type="submit" value="ChangeTag">
+        <div class="ui fluid form segment">
+            <div class="two fields">
+                <div class="field">
+                    <div class="ui form">
+                        <div class="field">
+                            <input type="text" name="changeTag" placeholder="{{tagName}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="ui submit button"><input type="submit" value="Add Keyword"></div>
+            </div>
+
+        </div>
     </form>
+<h2>List of Keywords</h2>
+    <div class="ui list">
+    {{#each listTags}}
+        <div class="item">{{ name }}</div>
+    {{/each}}
+        </div>
 </template>
