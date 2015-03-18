@@ -21,7 +21,6 @@ if (Tag.find() == null) {
 
 locStream = new Meteor.Stream("loc");
 
-var tagName = Tag.findOne().name;
 if (Meteor.isServer) {
 
     Meteor.methods({
